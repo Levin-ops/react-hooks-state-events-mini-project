@@ -11,8 +11,8 @@ function App() {
 
   const [tasks, setTasks] = useState(TASKS);
   
-  const handleDelete = (taskId) => {
-    const taskUpdate = tasks.filter(task => task.id !== taskId);
+  const handleDelete = (taskToDelete) => {
+    const taskUpdate = tasks.filter(task => task !== taskToDelete);
     setTasks(taskUpdate);
   }
 
@@ -21,7 +21,7 @@ function App() {
       <h2>My tasks</h2>
       <CategoryFilter />
       <NewTaskForm />
-      <TaskList tasks = {tasks} />
+      <TaskList tasks = {tasks} onDelete={handleDelete} />
     </div>
   );
 }

@@ -2,10 +2,10 @@ import React from "react";
 
 function Task({task, onDelete}) {
 
-  const {id,text, category} = task
+  const {text, category} = task
 
 function handleDeleteTask (){
-  onDelete(id)
+  onDelete(task)
 }
 
   return (
