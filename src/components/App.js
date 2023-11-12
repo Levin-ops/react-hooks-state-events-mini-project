@@ -9,7 +9,12 @@ console.log({ CATEGORIES, TASKS });
 
 function App() {
 
-  const [tasks, setTasks] = useState(TASKS) 
+  const [tasks, setTasks] = useState(TASKS);
+  
+  const handleDelete = (taskId) => {
+    const taskUpdate = tasks.filter(task => task.id !== taskId);
+    setTasks(taskUpdate);
+  }
 
   return (
     <div className="App">
